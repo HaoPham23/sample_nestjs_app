@@ -1,5 +1,5 @@
 import { Injectable } from "@nestjs/common";
-
+import { ApiProperty } from "@nestjs/swagger";
 @Injectable()
 export class AppService {
   private users: User[] = [
@@ -105,28 +105,50 @@ export class AppService {
   }
 }
 
-export interface Post {
+export class Post {
+  @ApiProperty()
   id: string;
+
+  @ApiProperty()
   content: string;
+
+  @ApiProperty()
   createdAt: Date;
 }
 
-export interface User {
+export class User {
+  @ApiProperty()
   id: string;
+
+  @ApiProperty()
   name: string;
+
+  @ApiProperty()
   email: string;
 }
 
-export interface Record {
+export class Record {
+  @ApiProperty()
   id: string;
+
+  @ApiProperty()
   userId: string;
+
+  @ApiProperty()
   amount: number;
+
+  @ApiProperty()
   description: string;
   createdAt: Date;
 }
 
-export interface Wallet {
+export class Wallet {
+  @ApiProperty()
   id: string;
+
+  @ApiProperty()
   userId: string;
+
+  @ApiProperty()
   balance: number;
 }
